@@ -6,21 +6,53 @@
     <title>Your Name - Portfolio</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden; /* To prevent horizontal scrolling */
         }
 
         header {
-            background-color: #333;
+            background: url('https://images.unsplash.com/photo-1618424181497-157f25b6ddd5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D') center/cover no-repeat;
             color: #fff;
             text-align: center;
-            padding: 20px;
+            padding: 150px 20px; /* Increased header height */
+            position: relative;
+            opacity: 86%;
         }
 
-        header h1 {
+        header::after {
+            content: '';
+            background: rgba(0, 0, 0, 0.8); /* Increased opacity for a darker background */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allow clicks to pass through the overlay */
+            z-index: -1; /* Place the overlay behind other content */
+        }
+
+        header h1, header p {
             margin: 0;
+        }
+
+        header p {
+            font-size: 1.5rem;
+        }
+
+        .resume-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .resume-button:hover {
+            background-color: #45a049;
         }
 
         section {
@@ -31,10 +63,20 @@
             color: #333;
         }
 
-        .project {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10px;
+        #about {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .about-header {
+            width: 30%;
+        }
+
+        .about-content {
+            width: 65%;
         }
 
         footer {
@@ -52,31 +94,18 @@
     <header>
         <h1>Your Name</h1>
         <p>Web Developer</p>
+        <a href="javascript:;" class="resume-button" download>Download Resume</a>
     </header>
 
     <section id="about">
-        <h2>About Me</h2>
-        <p>Welcome to my portfolio! I am a passionate web developer...</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of Project 1...</p>
+        <div class="about-header">
+            <h2>About Me</h2>
+            <!-- Add more headers as needed -->
         </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of Project 2...</p>
+        <div class="about-content">
+            <p>Welcome to my portfolio! I am a passionate web developer...</p>
+            <!-- Add more content as needed -->
         </div>
-        <!-- Add more projects as needed -->
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: your.email@example.com</p>
-        <p>LinkedIn: linkedin.com/in/yourusername</p>
-        <!-- Add more contact information as needed -->
     </section>
 
     <footer>
